@@ -10,19 +10,12 @@
  */
 class Solution {
     public int pairSum(ListNode head) {
-        ListNode dummy=new ListNode(0);
-        dummy.next=head;
-        int maxi1=0;
-        int maxi=0;
-        ListNode st=head; 
         ListNode fast=head;
         ListNode slow=head;
         while(fast!=null){
             fast=fast.next.next;
             slow=slow.next;
-            dummy=dummy.next;
         }
-        dummy=dummy.next;
         ListNode prev=null;
         while(slow!=null){
             ListNode temp=slow.next;
@@ -30,6 +23,9 @@ class Solution {
             prev=slow;
             slow=temp;
         }
+        ListNode st=head; 
+        int maxi1=0;
+        int maxi=0;
         while(prev!=null){
             maxi=0;
             maxi=st.val+prev.val;

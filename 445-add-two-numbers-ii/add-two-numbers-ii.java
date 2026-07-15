@@ -69,7 +69,7 @@ class Solution {
                 ans.add(sum);
             }
         }
-        if(carry==1){
+        if(carry>0){
             ans.add(1);
         }
         Collections.reverse(ans);
